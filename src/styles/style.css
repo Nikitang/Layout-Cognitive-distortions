@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin-left: auto;
@@ -8,7 +12,6 @@ body {
 header {
     position: relative;
     height: 914px;
-    margin-bottom: 100px;
 }
 
 header::before {
@@ -21,8 +24,9 @@ header::before {
     background-image: url('../assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #f5f4f0;
+    background-color: #ceccc6;
     opacity: 0.1;
+    z-index: -1;
 }
 
 .header__title {
@@ -47,6 +51,7 @@ header::before {
     height: 525px;
     top: 33px;
     left: 461px;
+    z-index: -1;
 }
 
 .header__text-left {
@@ -80,6 +85,18 @@ header::before {
     background-color: #fe8a02;
     color: white;
     text-decoration: none;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+.header__href:hover {
+    background-color: #f5f4f0;
+    color: #fe8a02;
+    border: 1px solid;
+    height: 55px;
+    width: 200px;
+    border-radius: 8px;
+    transform: translateX(10px) rotate(10deg);
 }
 
 .main {
@@ -87,6 +104,8 @@ header::before {
 }
 
 .main__header-txt {
+    position: relative;
+    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +113,6 @@ header::before {
 }
 
 .main__header-txt__one {
-    height: 73px;
     font-size: 60px;
     font-family: Neucha;
     color: #2a2626;
@@ -107,6 +125,8 @@ header::before {
 }
 
 .main__body-txt {
+    position: relative;
+    top: 80px;
     display: flex;
     justify-content: center;
     font-size: 18px;
@@ -114,10 +134,17 @@ header::before {
     line-height: 25.6px;
 }
 
-.main__body-href {
+.main__body-block {
+    position: relative;
+    top: 80px;
     display: flex;
     justify-content: center;
     margin-top: 30px;
+}
+
+.main__body-href {
+    width: 919px;
+    height: 517px;
 }
 
 .main__body-href__img {
@@ -127,13 +154,186 @@ header::before {
 }
 
 .main__nav {
-    background-color: #2a2626;
     display: flex;
+    background-color: #42413c;
+    width: 100%;
+    height: 1000px;
+}
+
+.main__nav-cards {
+    position: relative;
+    top: 200px;
+    left: 165px;
+    display: grid;
+    grid-template-areas: 'card card card' 'card card card';
     flex-wrap: wrap;
+    height: 700px;
 }
 
 .main__nav__card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-bottom: 20px;
     width: 350px;
-    height: 323px;
-    border: #f5f4f0 solid;
+    height: 348px;
+    background-color: #f5f4f0;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, border-radius 0.5s ease;
+    text-decoration: none;
+}
+
+.main__nav__card:hover {
+    transform: scale(1.05);
+    border-radius: 15px;
+}
+
+.main__nav__card-one {
+    display: flex;
+    background-color: #42413c;
+    flex-direction: column;
+}
+
+.main__nav__card-one-title {
+    font-size: 52px;
+    color: #fe8a02;
+    font-family: Neucha;
+}
+
+.main__nav__card-one-txt {
+    font-size: 52px;
+    color: #ffffff;
+    font-family: Neucha;
+}
+
+.main__nav__card-number {
+    font-size: 64px;
+    color: #42413c;
+    font-family: Neucha;
+    margin: 24px 0 10px 24px;
+}
+
+.main__nav__card-title {
+    font-size: 34px;
+    color: #fe8a02;
+    font-family: Neucha;
+    margin: 15px 0 10px 15px;
+}
+
+.main__nav__card-txt {
+    font-size: 16px;
+    color: #2a2626;
+    margin: 15px;
+    line-height: 26.6px;
+    width: 302px;
+}
+
+.main_effect-ikea {
+    position: relative;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_effect-ikea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ceccc6;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.main_effect-ikea__title {
+    position: relative;
+    top: 100px;
+    left: 165px;
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+}
+
+.main_effect-ikea__title__img {
+    width: 578px;
+    height: 434px;
+    filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
+}
+
+.main_effect-ikea__title__img img {
+    width: 578px;
+    height: 434px;
+}
+
+.main_effect-ikea__title__txt {
+    display: flex;
+    flex-direction: column;
+    width: 502px;
+    margin-left: 30px;
+}
+
+.main_effect-ikea__title__txt-first {
+    font-size: 24px;
+    color: #908d8b;
+    margin-bottom: 10px;
+}
+
+.main_effect-ikea__title__txt-title {
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+
+.main_effect-ikea__title__txt-body {
+    font-size: 34px;
+}
+
+.main_effect-ikea__title__txt-first,
+.main_effect-ikea__title__txt-title,
+.main_effect-ikea__title__txt-body {
+    font-family: 'Neucha';
+}
+
+.main_effect-ikea__dash {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 200px;
+    left: 165px;
+    width: 1100px;
+    height: 26px;
+    background-color: #b09a81;
+}
+
+.main_effect-ikea__dash span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.main_effect-ikea__footer {
+    position: absolute;
+    top: 680px;
+    width: 1100px;
+}
+
+.main_effect-ikea__footer-txt-one {
+    position: absolute;
+    left: 165px;
+    width: 540px;
+    height: 125px;
+    line-height: 26px;
+}
+
+.main_effect-ikea__footer-txt-two {
+    position: absolute;
+    left: 735px;
+    width: 540px;
+    height: 125px;
+    line-height: 26px;
 }
